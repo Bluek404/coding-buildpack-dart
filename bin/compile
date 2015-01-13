@@ -41,6 +41,8 @@ mkdir -p $PUB_CACHE
 MACHINE=`uname -a`
 message "-----> Welcome, this machine is: $MACHINE"
 
+export DART_SDK_URL="https://storage.googleapis.com/dart-archive/channels/stable/release/42039/sdk/dartsdk-linux-x64-release.zip"
+
 if [ -z "$DART_SDK_URL" ]; then
     message "ERROR: you must specify DART_SDK_URL to a Dart SDK for Linux. See README for this buildpack."
     exit 1
