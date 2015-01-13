@@ -85,9 +85,6 @@ cp -r $CACHE_DIR/dart-sdk /app
 DART_BIN=`ls -l /app/dart-sdk/bin/dart`
 message "-----> Dart cmd found at $DART_BIN"
 
-message $(strings /lib/x86_64-linux-gnu/libc.so.6 |grep GLIBC_)
-message $(objdump -p /app/dart-sdk/bin/dart)
-
 CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
 
