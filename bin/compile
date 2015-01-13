@@ -13,7 +13,7 @@ function message {
 
 # https://devcenter.heroku.com/articles/buildpack-api
 export_env_dir() {
-  env_dir=$1
+  env_dir="$1"
   message "-----> ENV_DIR is $env_dir"
   whitelist_regex=${2:-''}
   blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
@@ -41,7 +41,7 @@ mkdir -p $PUB_CACHE
 MACHINE=`uname -a`
 message "-----> Welcome, this machine is: $MACHINE"
 
-export DART_SDK_URL="https://storage.googleapis.com/dart-archive/channels/stable/release/42039/sdk/dartsdk-linux-x64-release.zip"
+DART_SDK_URL="http://nodoka.moe/dartsdk-linux-x64-release.zip"
 
 if [ -z "$DART_SDK_URL" ]; then
     message "ERROR: you must specify DART_SDK_URL to a Dart SDK for Linux. See README for this buildpack."
