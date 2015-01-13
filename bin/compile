@@ -43,8 +43,6 @@ message "-----> Welcome, this machine is: $MACHINE"
 
 DART_SDK_URL="http://nodoka.moe/dartsdk-linux-x64-release.zip"
 
-message $(strings /lib/libc.so.6 |grep GLIBC_)
-
 if [ -z "$DART_SDK_URL" ]; then
     message "ERROR: you must specify DART_SDK_URL to a Dart SDK for Linux. See README for this buildpack."
     exit 1
@@ -87,7 +85,7 @@ cp -r $CACHE_DIR/dart-sdk /app
 DART_BIN=`ls -l /app/dart-sdk/bin/dart`
 message "-----> Dart cmd found at $DART_BIN"
 
-message $(objdump -p /app/dart-sdk/bin/dart)
+message "-----> test "$(cd /app/dart-sdk/bin && objdump -p dart)
 
 CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
