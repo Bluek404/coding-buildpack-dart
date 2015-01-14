@@ -41,7 +41,7 @@ mkdir -p $PUB_CACHE
 MACHINE=`uname -a`
 message "-----> Welcome, this machine is: $MACHINE"
 
-DART_SDK_URL="https://github.com/selkhateeb/heroku-vagrant-dart-build/releases/download/1.6.0/dart-sdk.tar.gz"
+DART_SDK_URL="https://github.com/selkhateeb/heroku-vagrant-dart-build/releases/download/1.2.0-dev.1.0/dart-sdk.tar"
 
 if [ -z "$DART_SDK_URL" ]; then
     message "ERROR: you must specify DART_SDK_URL to a Dart SDK for Linux. See README for this buildpack."
