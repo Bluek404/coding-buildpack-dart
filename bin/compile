@@ -41,11 +41,8 @@ mkdir -p $PUB_CACHE
 MACHINE=`uname -a`
 message "-----> Welcome, this machine is: $MACHINE"
 
-DART_SDK_URL="http://dart.coding.io/dart-sdk.tar"
-
 if [ -z "$DART_SDK_URL" ]; then
-    message "ERROR: you must specify DART_SDK_URL to a Dart SDK for Linux. See README for this buildpack."
-    exit 1
+    DART_SDK_URL="http://dart.coding.io/dart-sdk.tar"
 fi
 
 cd $BUILD_DIR
